@@ -5,7 +5,7 @@ module.exports = {
     port: 5432,
     host: "127.0.0.1",
     dialect: "postgres",
-    operatorsAliases: false,
+    operatorsAliases: 0,
     logging: false,
     define: {
         timestamps: true,

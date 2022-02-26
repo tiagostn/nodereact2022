@@ -1,10 +1,15 @@
+    require('dotenv').config({
+    path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env'
+});
+
 module.exports = {
-    username: 'user_bapi',
-    password: 'bapi2021',
-    database: "nodereact",
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
     port: 5432,
-    host: "127.0.0.1",
-    dialect: "postgres",
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_DIALECT || 'postgres',
+    storage: './__tests__/database.sqlite',
     operatorsAliases: 0,
     logging: false,
     define: {
@@ -13,21 +18,3 @@ module.exports = {
         underscoredAll: true,
     }
 }
-
-// {
-  
-//   "test": {
-//     "username": "root",
-//     "password": null,
-//     "database": "database_test",
-//     "host": "127.0.0.1",
-//     "dialect": "mysql"
-//   },
-//   "production": {
-//     "username": "root",
-//     "password": null,
-//     "database": "database_production",
-//     "host": "127.0.0.1",
-//     "dialect": "mysql"
-//   }
-// }

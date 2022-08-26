@@ -12,7 +12,7 @@ class AppController {
         this.express = express();
 
         this.security();
-        this.middlewares();
+        this.middleware();
         this.openApi();
         this.routes();
     }
@@ -21,7 +21,7 @@ class AppController {
         this.express.use(cors());
     }
 
-    middlewares() {
+    middleware() {
         this.express.use(express.json());
     }
 
